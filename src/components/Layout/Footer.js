@@ -143,9 +143,7 @@ export default function Footer() {
                 </li>
               </ul>
               <h6 style={{marginTop:'2rem'}}>
-                infront of bus stand,
-                Nittambuva,
-                Gampaha
+                Colombo RD,Avissawella
               </h6>
             </MDBCol>
           </MDBRow>
