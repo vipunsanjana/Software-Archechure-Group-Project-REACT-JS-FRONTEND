@@ -3,6 +3,8 @@ import { NavLink, Link } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
 import SearchInput from "../Form/SearchInput";
+import useCategory from "../../hooks/useCategory";
+import { useCart } from "../../context/cart";
 import { Badge } from "antd";
 
 const Header = () => {
@@ -21,13 +23,21 @@ const Header = () => {
   
   return (
     <>
-
-      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top" >
-        <div>
-        
-        </div>
       
-        <div className="container-fluid">
+     
+      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top" >
+      
+        <div className="container-fluid" style={{ background:'#c1c1c0' ,padding:'.1rem',borderRadius:'0 0 2rem 2rem',position:'absolute',top:'0rem',display:'flex',flexDirection:'column',flexWrap:'wrap'}}>
+        
+        <div>
+        <img
+        src="/images/banner.png"
+        className="banner-img"
+        alt="bannerimage"
+        style={{width:'100vw'}}
+
+      />
+        </div>
           <button
             className="navbar-toggler"
             type="button"
@@ -40,7 +50,7 @@ const Header = () => {
             <span className="navbar-toggler-icon" />
           </button>
          
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo01" style={{padding:'.3rem'}}>
             {/* <Link to="/" className="navbar-brand">
               🛒 Ecommerce App
             </Link> */}
@@ -138,6 +148,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
+      
     </>
   );
 };
