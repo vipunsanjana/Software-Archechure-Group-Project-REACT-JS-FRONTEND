@@ -13,11 +13,11 @@ const Register = () => {
   const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
 
-  
+  // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:2020/api/v1/auth/register", {
+      const res = await axios.post("http://localhost:8080/api/v1/auth/register", {
         name,
         email,
         password,
