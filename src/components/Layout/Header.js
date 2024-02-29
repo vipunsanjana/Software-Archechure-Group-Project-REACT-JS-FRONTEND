@@ -61,6 +61,15 @@ const Header = () => {
                   Home
                 </NavLink>
               </li>
+
+              <li className="nav-item">
+                    <NavLink to="/Contact" className="nav-link">
+                    Contact
+                    </NavLink>
+                  </li>
+
+
+          
               <li className="nav-item dropdown">
                 <Link
                   className="nav-link dropdown-toggle"
@@ -143,6 +152,7 @@ const Header = () => {
                     Cart
                   </Badge>
                 </NavLink>
+               
               </li>
             </ul>
           </div>

@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 
 const Review = () => {
   return (
-    <div style={{marginTop:'4rem'}}>
-        <h1 style={{fontSize:'2rem',textAlign:'center',fontWeight:'900'}}>Costumer Reviews</h1>
-        <div style={{display:'flex',justifyContent:'space-around',margin:'0rem 2rem 3rem 2rem',padding:'2rem',borderTop:'solid',textAlign:'center',fontFamily:'sans-serif'}}>
+    <div style={{margin:'7rem 0 0 2rem'}}>
+        <h1  className="bg-dark p-2 text-white text-center">Costumer Reviews</h1>
+        <div style={{display:'flex',justifyContent:'space-around',margin:'0rem 2rem 3rem 2rem',padding:'2rem',textAlign:'center',fontFamily:'sans-serif'}}>
       <div >
         <div>
             <img 
