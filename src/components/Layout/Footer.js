@@ -90,30 +90,14 @@ export default function Footer() {
                       borderRadius: "10px",
                     }}
                   >
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </MDBCol>
-
-            <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
-              <ul className="list-unstyled mb-0">
-                <li>
-                  <a
-                    href="#!"
-                    className="text-white"
-                    style={{
-                      textDecoration: "none",
-                      fontWeight: "900",
-                      backgroundColor: "grey",
-                      padding: ".5rem",
-                      borderRadius: "10px",
-                    }}
-                  >
                     Policy
                   </a>
                 </li>
               </ul>
+              <h6 style={{marginTop:'2rem'}}>
+              At VI SOLUTIONS, we are committed to protecting your privacy and ensuring 
+              the security of your personal information. 
+              </h6>
             </MDBCol>
 
             <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
@@ -134,6 +118,10 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
+              <h6 style={{marginTop:'2rem'}}>
+              At VI SOLUTIONS, we are passionate about providing top-quality c
+              omputer products and exceptional service to our customers
+              </h6>
             </MDBCol>
 
             <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
@@ -154,6 +142,9 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
+              <h6 style={{marginTop:'2rem'}}>
+                Colombo RD,Avissawella
+              </h6>
             </MDBCol>
           </MDBRow>
         </section>
