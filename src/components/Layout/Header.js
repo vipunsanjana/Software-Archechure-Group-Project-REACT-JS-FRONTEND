@@ -6,6 +6,7 @@ import SearchInput from "../Form/SearchInput";
 import useCategory from "../../hooks/useCategory";
 import { useCart } from "../../context/cart";
 import { Badge } from "antd";
+import { FaShoppingCart } from 'react-icons/fa';
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
@@ -138,12 +139,12 @@ const Header = () => {
                 </>
               )}
               <li className="nav-item">
-                <NavLink to="/cart" className="nav-link">
-                  <Badge count={cart?.length} showZero offset={[10, -5]}>
-                    Cart
-                  </Badge>
-                </NavLink>
-              </li>
+  <NavLink to="/cart" className="nav-link">
+    <Badge count={cart?.length} showZero offset={[10, -5]}>
+      <FaShoppingCart style={{fontSize:'24px'}}/> {/* Replace "Cart" text with cart icon */}
+    </Badge>
+  </NavLink>
+</li>
             </ul>
           </div>
         </div>

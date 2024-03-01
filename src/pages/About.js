@@ -13,14 +13,14 @@ const About = () => {
           />
         </div>
         <div className="col-md-4">
-          <p className="text-justify mt-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            officiis obcaecati esse tempore unde ratione, eveniet mollitia,
-            perferendis eius temporibus dicta blanditiis doloremque explicabo
-            quasi sunt vero optio cum aperiam vel consectetur! Laborum enim
-            accusantium atque, excepturi sapiente amet! Tenetur ducimus aut
-            commodi illum quidem neque tempora nam.
-          </p>
+        <h1>About Us</h1>
+        <ul>
+            <li>We are committed to providing high-quality products and excellent customer service.</li>
+            <li>Our team is dedicated to ensuring your shopping experience is seamless and enjoyable.</li>
+            <li>We source our products from trusted suppliers to guarantee authenticity and reliability.</li>
+            <li>Customer satisfaction is our top priority, and we strive to exceed your expectations.</li>
+            <li>At our core, we believe in transparency, integrity, and innovation.</li>
+        </ul>
         </div>
       </div>
     </Layout>

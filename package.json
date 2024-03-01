@@ -13,6 +13,7 @@
     "axios": "^1.6.7",
     "braintree-web-drop-in-react": "^1.2.1",
     "dom": "^0.0.3",
+    "google-map-react": "^2.2.1",
     "mdb-react-ui-kit": "^7.2.0",
     "moment": "^2.30.1",
     "react": "^18.2.0",
