@@ -1,96 +1,89 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Layout from "./../../components/Layout/Layout";
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle as fabGoogle, faFacebook as fabFacebook } from '@fortawesome/free-brands-svg-icons';
-import "../../styles/Loginpage.css"
+import axios from "axios";
+import { useNavigate, useLocation } from "react-router-dom";
+import toast from "react-hot-toast";
+import "../../styles/AuthStyles.css";
+import { useAuth } from "../../context/auth";
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [auth, setAuth] = useAuth();
 
-// Add the imported icons to the library
-library.add( fabGoogle, fabFacebook);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-function Login()  {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // Check for empty fields
-    if (!username || !password) {
-        setError('Please enter both email and password.');
-        return;
-      }
-      // Check email format (basic check for example purposes)
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailPattern.test(username)) {
-        setError('Please enter a valid email address.');
-        return;
-      }
   
-      // Simulate authentication (Replace with actual authentication logic)
-      if (username === 'user@example.com' && password === 'password') {
-        console.log('Logged in successfully!');
-        // Here you can redirect the user to another page
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("http://localhost:2020/api/v1/auth/login", {
+        email,
+        password,
+      });
+      if (res && res.data.success) {
+        toast.success(res.data && res.data.message);
+        setAuth({
+          ...auth,
+          user: res.data.user,
+          token: res.data.token,
+        });
+        localStorage.setItem("auth", JSON.stringify(res.data));
+        navigate(location.state || "/");
       } else {
-        setError('Invalid username or password');
+        toast.error(res.data.message);
       }
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong");
+    }
   };
-
   return (
-    <Layout title="Login - Ecommer App">
-    <div className="login-page">
-    
-      <div className="login-container">
-        <h2>Login</h2>
-        <form onSubmit={handleLogin}>
-          <div className="form-group">
-            <label>
-               Email
-            </label>
+    <Layout title="Register - Ecommer App">
+      <div className="form-container " style={{ minHeight: "90vh" }}>
+        <form onSubmit={handleSubmit}>
+          <h4 className="title">Welcome Back</h4>
+          <p className="text">Sign in to your account  </p>
+
+          <div className="mb-3">
             <input
-              type="email" 
-              placeholder='enter your email'
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              autoFocus
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="form-control"
+              id="exampleInputEmail1"
+              placeholder="Enter Your Email "
               required
             />
           </div>
-          <div className="form-group">
-            <label>
-              Password
-            </label>
+          <div className="mb-3">
             <input
               type="password"
-              placeholder='enter your password'
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="form-control"
+              id="exampleInputPassword1"
+              placeholder="Enter Your Password"
               required
             />
           </div>
-          <div >
-            <button className='login-btn' type="submit">Login</button>
+          <div className="mb-3">
+            <a
+              href="ForgotPassword.js"
+              onClick={() => {
+                navigate("/forgot-password");
+              }}
+            >
+              Forgot Password
+            </a>
           </div>
+
+          <button type="submit" className="btn-primary">
+            Login
+          </button>
         </form>
-        <div className="additional-options">
-          <a href="#forgot" className="forgot-password">
-            Forgot Password?
-          </a><br />
-          <p>-Or-</p>
-          <div className="social-login">
-            <button className="google-login">
-              <FontAwesomeIcon icon={fabGoogle} /> 
-            </button>
-            <button className="facebook-login">
-              <FontAwesomeIcon icon={fabFacebook} /> 
-            </button>
-          </div>
-          <div className='signup-option'>
-             <p>Don't have an account? <a href="#signup">Sign Up</a></p>
-          </div>
-          
-        </div>
       </div>
-    </div>
     </Layout>
   );
 };
