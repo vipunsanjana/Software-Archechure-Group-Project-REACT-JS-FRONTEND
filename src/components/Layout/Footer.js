@@ -6,12 +6,11 @@ import {
   MDBCol,
   MDBRow,
   MDBBtn,
-  MDBIcon,
 } from "mdb-react-ui-kit";
-import { FaFacebook, FaGoogle } from "react-icons/fa";
-import { AiOutlineGoogle } from "react-icons/ai";
-import { FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaGoogle, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AiOutlineGoogle } from "react-icons/ai";
+
 export default function Footer() {
   return (
     <MDBFooter className="text-center" color="white" bgColor="dark">
@@ -36,7 +35,7 @@ export default function Footer() {
           </Link>
         </section>
 
-        {/* Newsletter signup */}
+        
         <section>
           <form action="">
             <MDBRow className="d-flex justify-content-center">
@@ -64,7 +63,7 @@ export default function Footer() {
           </form>
         </section>
 
-        {/* Information sections */}
+       
         <section className="mb-4">
           <p>
             Our knowledgeable staff is dedicated to providing expert advice and
@@ -74,24 +73,16 @@ export default function Footer() {
         </section>
 
         <section>
-          {/* Navigation links */}
-          <MDBRow style={{ justifyContent: "center" }}>
+          <MDBRow className="justify-content-center">
             <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
               <ul className="list-unstyled mb-0">
                 <li>
-                  <a
-                    href="#!"
-                    className="text-white"
-                    style={{
-                      textDecoration: "none",
-                      fontWeight: "900",
-                      backgroundColor: "grey",
-                      padding: ".5rem",
-                      borderRadius: "10px",
-                    }}
+                  <Link
+                    to="/contact"
+                    className="text-white text-decoration-none fw-bold px-3 py-1 bg-secondary rounded"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </MDBCol>
@@ -99,19 +90,12 @@ export default function Footer() {
             <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
               <ul className="list-unstyled mb-0">
                 <li>
-                  <a
-                    href="#!"
-                    className="text-white"
-                    style={{
-                      textDecoration: "none",
-                      fontWeight: "900",
-                      backgroundColor: "grey",
-                      padding: ".5rem",
-                      borderRadius: "10px",
-                    }}
+                  <Link
+                    to="/policy"
+                    className="text-white text-decoration-none fw-bold px-3 py-1 bg-secondary rounded"
                   >
-                    Policy
-                  </a>
+                    Privacy
+                  </Link>
                 </li>
               </ul>
             </MDBCol>
@@ -119,19 +103,12 @@ export default function Footer() {
             <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
               <ul className="list-unstyled mb-0">
                 <li>
-                  <a
-                    href="#!"
-                    className="text-white"
-                    style={{
-                      textDecoration: "none",
-                      fontWeight: "900",
-                      backgroundColor: "grey",
-                      padding: ".5rem",
-                      borderRadius: "10px",
-                    }}
+                  <Link
+                    to="/about"
+                    className="text-white text-decoration-none fw-bold px-3 py-1 bg-secondary rounded"
                   >
                     About
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </MDBCol>
@@ -139,19 +116,12 @@ export default function Footer() {
             <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
               <ul className="list-unstyled mb-0">
                 <li>
-                  <a
-                    href="#!"
-                    className="text-white"
-                    style={{
-                      textDecoration: "none",
-                      fontWeight: "900",
-                      backgroundColor: "grey",
-                      padding: ".5rem",
-                      borderRadius: "10px",
-                    }}
+                  <Link
+                    to="/address"
+                    className="text-white text-decoration-none fw-bold px-3 py-1 bg-secondary rounded"
                   >
                     Address
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </MDBCol>
@@ -159,20 +129,9 @@ export default function Footer() {
         </section>
       </MDBContainer>
 
-      {/* Copyright */}
-      <div
-        className="text-center p-3"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-      >
-        © 2024 Copyright:
-        <a
-          className="text-white"
-          href="https://.com/"
-          style={{ textDecoration: "none", fontWeight: "900" }}
-        >
-          VI SOLUTIONS
-        </a>
+      <div className="text-center p-3 bg-secondary">
+        © {new Date().getFullYear()} VI SOLUTIONS. All rights reserved.
       </div>
     </MDBFooter>
-  );
+  );
 }
